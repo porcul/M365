@@ -1,0 +1,17 @@
+=IF(
+    WEEKDAY([StartDate],2) <= 3,
+    [StartDate] + 3, 
+    IF(
+        WEEKDAY([StartDate],2) = 4,
+        [StartDate] + 5,
+        IF(
+            WEEKDAY([StartDate],2) = 5,
+            [StartDate] + 5,
+            IF(
+                WEEKDAY([StartDate],2) = 6,
+                [StartDate] + 5,
+                IF(WEEKDAY([StartDate],2) = 7, [StartDate] + 4, [StartDate] + 3)
+            )
+        )
+    )
+)
